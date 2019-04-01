@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "979109058041",
+    "firebase_url": "https://xxxpress-92192.firebaseio.com",
+    "project_id": "xxxpress-92192",
+    "storage_bucket": "xxxpress-92192.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979109058041:android:476bf66a12910e8e",
+        "android_client_info": {
+          "package_name": "xxxpress.developer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "979109058041-jvuubaeocvbv3v66u8ivkuu2u0qca9ob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "xxxpress.developer",
+            "certificate_hash": "6f5f4d2e2720091c04d8cb5d262d84270f716887"
+          }
+        },
+        {
+          "client_id": "979109058041-c9f3rae17p4daplb3n366ed49iea0mp1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz1up3MHyFv_yOLR7k3ExvnH4EldScWRY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "979109058041-c9f3rae17p4daplb3n366ed49iea0mp1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
