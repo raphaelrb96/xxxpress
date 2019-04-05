@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">XXXPRESS</string>
+    <string name="title_activity_inventario">InventarioActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_editor_inventario">EditorInventarioActivity</string>
+    <string name="adicione_photos">Adicione Fotos</string>
+    <string name="nome">Nome:</string>
+    <string name="frete">Frete:</string>
+    <string name="preco_original">Preco Original:</string>
+    <string name="preco_antigo">Preço Antigo:</string>
+    <string name="preco_novo">Preço Novo:</string>
+    <string name="cor">Cor:</string>
+    <string name="insira_uma_cor">Insira uma cor</string>
+    <string name="tamanho">Tamanho</string>
+    <string name="insira_um_tamanho">Insira um tamanho</string>
+    <string name="facebook_app_id">2111341732317939</string>
+    <string name="fb_login_protocol_scheme">fb2111341732317939</string>
+
+    <string name="meu_web_client_id">979109058041-c9f3rae17p4daplb3n366ed49iea0mp1.apps.googleusercontent.com</string>
+
+
 </resources>

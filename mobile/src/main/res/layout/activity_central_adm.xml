@@ -46,6 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <android.support.v7.widget.CardView
+                android:id="@+id/bt_adm_central_inventario"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:layout_marginRight="16dp"
@@ -158,6 +159,31 @@
                     <TextView
                         android:layout_gravity="center"
                         android:text="SUPORTE"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/bt_adm_central_sair"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+                <FrameLayout
+                    android:background="@color/colorPrimary"
+                    android:layout_margin="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="SAIR"
                         android:textColor="@color/colorAccent"
                         android:textSize="28sp"
                         android:textStyle="bold"

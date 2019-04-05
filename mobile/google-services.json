@@ -21,10 +21,6 @@
             "package_name": "xxxpress.developer",
             "certificate_hash": "6f5f4d2e2720091c04d8cb5d262d84270f716887"
           }
-        },
-        {
-          "client_id": "979109058041-c9f3rae17p4daplb3n366ed49iea0mp1.apps.googleusercontent.com",
-          "client_type": 3
         }
       ],
       "api_key": [
@@ -33,20 +29,13 @@
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 2,
           "other_platform_oauth_client": [
             {
               "client_id": "979109058041-c9f3rae17p4daplb3n366ed49iea0mp1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
-        },
-        "ads_service": {
-          "status": 2
         }
       }
     }

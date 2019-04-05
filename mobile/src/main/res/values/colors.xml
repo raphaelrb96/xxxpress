@@ -2,5 +2,6 @@
 <resources>
     <color name="colorPrimary">#ffffff</color>
     <color name="colorPrimaryDark">#000000</color>
+    <color name="corCinza">#494949</color>
     <color name="colorAccent">#2200cc</color>
 </resources>
