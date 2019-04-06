@@ -5,723 +5,894 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".adm.fragments.EditorInventarioFragment"
     tools:showIn="@layout/activity_editor_inventario">
+
     <ScrollView
-        android:layout_marginBottom="60dp"
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
+
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="wrap_content">
+
                 <LinearLayout
-                    android:layout_gravity="center"
-                    android:padding="30dp"
-                    android:orientation="horizontal"
+                    android:id="@+id/ll_bt_add_fotos_editor_inventario"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:padding="30dp">
+
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="10dp"
+                        android:gravity="center"
+                        android:text="@string/adicione_photos"
+                        android:textColor="@color/corCinza"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_add_a_photo_cinza_24dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:id="@+id/img1_produto_inventario_editor"
+                        android:adjustViewBounds="true"
+                        android:src="@mipmap/ic_image_itens_launcher"
+                        android:scaleType="center"
                         android:layout_margin="10dp"
                         android:layout_gravity="center"
-                        android:gravity="center"
-                        android:textColor="@color/corCinza"
-                        android:textStyle="bold"
-                        android:textSize="28sp"
-                        android:text="@string/adicione_photos"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <View
-                        android:background="@drawable/ic_add_a_photo_cinza_24dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp" />
+                    <ImageView
+                        android:src="@mipmap/ic_image_itens_launcher"
+                        android:id="@+id/img2_produto_inventario_editor"
+                        android:adjustViewBounds="true"
+                        android:scaleType="center"
+                        android:layout_margin="10dp"
                         android:layout_gravity="center"
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"/>
+                        android:layout_width="120dp"
+                        android:layout_height="120dp" />
+                    <ImageView
+                        android:src="@mipmap/ic_image_itens_launcher"
+                        android:id="@+id/img3_produto_inventario_editor"
+                        android:adjustViewBounds="true"
+                        android:scaleType="center"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp" />
+                    <ImageView
+                        android:src="@mipmap/ic_image_itens_launcher"
+                        android:id="@+id/img4_produto_inventario_editor"
+                        android:adjustViewBounds="true"
+                        android:scaleType="center"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp" />
+                    <ImageView
+                        android:src="@mipmap/ic_image_itens_launcher"
+                        android:id="@+id/img5_produto_inventario_editor"
+                        android:adjustViewBounds="true"
+                        android:scaleType="center"
+                        android:layout_margin="10dp"
+                        android:layout_gravity="center"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp" />
                 </LinearLayout>
-                <ImageView
-                    android:visibility="gone"
-                    android:id="@+id/img_produto_inventario_editor"
-                    android:adjustViewBounds="true"
-                    android:scaleType="center"
+
+            </HorizontalScrollView>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/nome_editor_inventario"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
+                    android:hint="Nome"
+                    android:inputType="textPersonName"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/frete_editor_inventario"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </FrameLayout>
-            <View
-                android:background="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"/>
-            <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="@string/nome"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:baselineAligned="false"
+                    android:focusable="false"
+                    android:hint="Frete"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
+                    android:textSize="22sp" />
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="@string/frete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
                 <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
+                    android:id="@+id/preco_original_editor_inventario"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
+                    android:hint="Preço Original"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
+                    android:textSize="22sp" />
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="@string/preco_original"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
                 <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
+                    android:id="@+id/preco_antigo_editor_inevntario"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
+                    android:hint="Preço Antigo"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
+                    android:textSize="22sp" />
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="@string/preco_antigo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
                 <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
+                    android:id="@+id/preco_novo_editor_inventario"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
+                    android:hint="Preço Novo"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
+                    android:textSize="22sp" />
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="@string/preco_novo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-                <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
-                    android:inputType="textPersonName"
-                    android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent" />
-            </LinearLayout>
-            <View
-                android:background="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"/>
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
                 <CheckBox
-                    android:layout_marginTop="6dp"
-                    android:textColor="@color/corCinza"
+                    android:id="@+id/cb_cor_editor_inventario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
                     android:layout_gravity="center|start"
-                    android:textSize="28sp"
+                    android:layout_marginTop="6dp"
                     android:text="@string/cor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp" />
-                <LinearLayout
-                    android:visibility="gone"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp">
-                    <android.support.v7.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        android:layout_weight="1"
-                        android:layout_margin="6dp"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:hint="@string/insira_uma_cor"
-                            android:background="@color/colorPrimary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </android.support.v7.widget.CardView>
-                    <View
-                        android:background="@drawable/ic_action_add_dark"
-                        android:layout_margin="6dp"
-                        android:layout_gravity="center"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp" />
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:background="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"/>
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <CheckBox
-                    android:layout_marginTop="6dp"
                     android:textColor="@color/corCinza"
-                    android:layout_gravity="center|start"
-                    android:textSize="28sp"
-                    android:text="@string/tamanho"
-                    android:layout_width="wrap_content"
-                    android:layout_height="60dp" />
+                    android:textSize="28sp" />
+
                 <LinearLayout
-                    android:visibility="gone"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+                    android:id="@+id/box_add_cor_editor_invntario"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
                     <android.support.v7.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        android:layout_weight="1"
-                        android:layout_margin="6dp"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:hint="@string/insira_um_tamanho"
-                            android:background="@color/colorPrimary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </android.support.v7.widget.CardView>
-                    <View
-                        android:background="@drawable/ic_action_add_dark"
+                        android:layout_height="match_parent"
                         android:layout_margin="6dp"
-                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp">
+
+                        <EditText
+                            android:focusable="false"
+                            android:id="@+id/et_cor_add_editor_inventario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/colorPrimary"
+                            android:hint="@string/insira_uma_cor" />
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:id="@+id/bt_add_cor_editor_inventario"
                         android:layout_width="45dp"
-                        android:layout_height="45dp" />
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/ic_action_add_dark" />
                 </LinearLayout>
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cb_tamanho_editor_inventario"
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginTop="6dp"
+                    android:text="Tamanho:"
+                    android:textColor="@color/corCinza"
+                    android:textSize="28sp" />
+
                 <LinearLayout
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
+                    android:id="@+id/box_add_tamanho_editor_inventario"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp">
+
+                        <EditText
+                            android:focusable="false"
+                            android:id="@+id/et_tamanho_add_editor_inventario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/colorPrimary"
+                            android:hint="@string/insira_um_tamanho" />
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:id="@+id/bt_add_tamanho_editor_inventario"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/ic_action_add_dark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
                     <CheckBox
-                        android:layout_marginTop="6dp"
-                        android:textColor="@color/corCinza"
+                        android:id="@+id/cb_extra1_editor_inventario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
                         android:layout_gravity="center|start"
-                        android:textSize="28sp"
+                        android:layout_marginTop="6dp"
                         android:text="Extra 1:"
-                        android:layout_width="wrap_content"
-                        android:layout_height="60dp" />
-                    <EditText
-                        android:visibility="gone"
-                        android:layout_gravity="center"
-                        android:textSize="22sp"
-                        android:hint="Insira uma variante"
-                        android:inputType="textPersonName"
-                        android:lines="1"
-                        android:focusable="false"
-                        android:background="@color/colorPrimary"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent" />
-                    <View
-                        android:visibility="gone"
-                        android:alpha="0.4"
-                        android:layout_marginTop="6dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_beenhere_cinza_24dp"
-                        android:layout_width="34dp"
-                        android:layout_height="34dp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:visibility="gone"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp">
-                    <android.support.v7.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        android:layout_weight="1"
-                        android:layout_margin="6dp"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:hint="Insira aqui"
-                            android:background="@color/colorPrimary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </android.support.v7.widget.CardView>
-                    <View
-                        android:background="@drawable/ic_action_add_dark"
-                        android:layout_margin="6dp"
-                        android:layout_gravity="center"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp" />
-                </LinearLayout>
-            </LinearLayout>
-            <View
-                android:background="@color/colorPrimaryDark"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"/>
-            <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:layout_gravity="center"
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <CheckBox
-                        android:layout_marginTop="6dp"
                         android:textColor="@color/corCinza"
-                        android:layout_gravity="center|start"
-                        android:textSize="28sp"
-                        android:text="Extra 2:"
-                        android:layout_width="wrap_content"
-                        android:layout_height="60dp" />
+                        android:textSize="28sp" />
+
                     <EditText
-                        android:visibility="gone"
+                        android:id="@+id/et_nome_extra1_editor_inventario"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
                         android:layout_gravity="center"
-                        android:textSize="22sp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:focusable="false"
                         android:hint="Insira uma variante"
                         android:inputType="textPersonName"
                         android:lines="1"
-                        android:focusable="false"
-                        android:background="@color/colorPrimary"
-                        android:layout_marginTop="6dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent" />
+                        android:textSize="20sp"
+                        android:visibility="visible" />
+
                     <View
-                        android:visibility="gone"
-                        android:alpha="0.4"
-                        android:layout_marginTop="6dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_beenhere_cinza_24dp"
+                        android:id="@+id/bt_add_nome_extra1_edior_inventario"
                         android:layout_width="34dp"
-                        android:layout_height="34dp"/>
+                        android:layout_height="34dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="6dp"
+                        android:alpha="0.4"
+                        android:background="@drawable/ic_beenhere_cinza_24dp"
+                        android:visibility="visible" />
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="gone"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
+                    android:id="@+id/box_add_extra1_editor_inventario"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
                     <android.support.v7.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        android:layout_weight="1"
-                        android:layout_margin="6dp"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:hint="Insira aqui"
-                            android:background="@color/colorPrimary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </android.support.v7.widget.CardView>
-                    <View
-                        android:background="@drawable/ic_action_add_dark"
+                        android:layout_height="match_parent"
                         android:layout_margin="6dp"
-                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp">
+
+                        <EditText
+                            android:focusable="false"
+                            android:id="@+id/et_add_extra1_variante_editor_inventario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/colorPrimary"
+                            android:hint="Insira aqui" />
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:id="@+id/bt_add_variante_extra1_editor_inventario"
                         android:layout_width="45dp"
-                        android:layout_height="45dp" />
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/ic_action_add_dark" />
                 </LinearLayout>
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/cb_extra2_editor_inventario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:layout_gravity="center|start"
+                        android:layout_marginTop="6dp"
+                        android:text="Extra 2:"
+                        android:textColor="@color/corCinza"
+                        android:textSize="28sp" />
+
+                    <EditText
+                        android:id="@+id/et_extra2_nome_editor_inventario"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"
+                        android:focusable="false"
+                        android:hint="Insira uma variante"
+                        android:inputType="textPersonName"
+                        android:lines="1"
+                        android:textSize="20sp"
+                        android:visibility="visible" />
+
+                    <View
+                        android:id="@+id/bt_add_nome_extra2_editor_inventario"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="6dp"
+                        android:alpha="0.4"
+                        android:background="@drawable/ic_beenhere_cinza_24dp"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/box_extra2_add_variante_editor_inventario"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="6dp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp">
+
+                        <EditText
+                            android:focusable="false"
+                            android:id="@+id/et_extra2_add_variante_editor_inventario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/colorPrimary"
+                            android:hint="Insira aqui" />
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:id="@+id/bt_extra2_add_variante_editor_inventario"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/ic_action_add_dark" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_gravity="center|start"
-                    android:textSize="28sp"
-                    android:text="Descrição:"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|start"
+                    android:text="Descrição:"
+                    android:textSize="28sp" />
+
                 <EditText
-                    android:textSize="22sp"
+                    android:id="@+id/et_descricao_frase_destaque"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="26dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
                     android:hint="Frase de Destaque:"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/et_descricao_observacoes"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="26dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
-                <EditText
-                    android:textSize="22sp"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
                     android:hint="Observacoes:"
                     android:inputType="textPersonName"
                     android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_width="60dp"
-                    android:layout_height="match_parent" />
+                    android:textSize="18sp" />
+
                 <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal">
+
                     <android.support.v7.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        android:layout_weight="1"
-                        android:layout_margin="6dp"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:hint="Especificações"
-                            android:background="@color/colorPrimary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </android.support.v7.widget.CardView>
-                    <View
-                        android:background="@drawable/ic_action_add_dark"
+                        android:layout_height="match_parent"
                         android:layout_margin="6dp"
-                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:cardCornerRadius="8dp">
+
+                        <EditText
+                            android:focusable="false"
+                            android:id="@+id/et_descricao_add_especificacos"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/colorPrimary"
+                            android:hint="Especificações" />
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:id="@+id/bt_descricao_frase_destaqueet_descricao_add_especificacoes"
                         android:layout_width="45dp"
-                        android:layout_height="45dp" />
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/ic_action_add_dark" />
                 </LinearLayout>
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="Tags"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Tags"
+                    android:textSize="28sp" />
+
                 <LinearLayout
-                    android:visibility="gone"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
                     <android.support.v7.widget.CardView
-                        app:cardCornerRadius="8dp"
-                        android:layout_weight="1"
-                        android:layout_margin="6dp"
                         android:layout_width="0dp"
-                        android:layout_height="match_parent">
-                        <EditText
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:hint="Escrever"
-                            android:background="@color/colorPrimary"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" />
-                    </android.support.v7.widget.CardView>
-                    <View
-                        android:background="@drawable/ic_action_add_dark"
+                        android:layout_height="match_parent"
                         android:layout_margin="6dp"
-                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="8dp">
+
+                        <EditText
+                            android:focusable="false"
+                            android:id="@+id/et_add_tags_edior_inventario"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginBottom="4dp"
+                            android:background="@color/colorPrimary"
+                            android:hint="Escrever" />
+                    </android.support.v7.widget.CardView>
+
+                    <View
+                        android:id="@+id/bt_add_tags_edior_inventario"
                         android:layout_width="45dp"
-                        android:layout_height="45dp" />
+                        android:layout_height="45dp"
+                        android:layout_gravity="center"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/ic_action_add_dark" />
                 </LinearLayout>
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="Tags"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Categoria"
+                    android:textSize="28sp" />
+
                 <Spinner
+                    android:id="@+id/spinner_categorias_editor_inventario"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
+                    android:layout_height="50dp" />
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="Tempo de Entrega"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
                 <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
-                    android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
+                    android:id="@+id/et_tempo_entrega_editor_inventario"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
+                    android:hint="Tempo de Entrega"
+                    android:inputType="numberDecimal"
+                    android:lines="1"
+                    android:textSize="22sp" />
             </LinearLayout>
+
             <View
-                android:background="@color/colorPrimaryDark"
                 android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@color/colorPrimaryDark" />
+
             <LinearLayout
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="60dp">
-                <TextView
-                    android:layout_gravity="center"
-                    android:textSize="28sp"
-                    android:text="Quantidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_height="60dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="12dp"
+                android:orientation="horizontal">
+
                 <EditText
-                    android:textSize="22sp"
-                    android:hint="Insira aqui"
-                    android:lines="1"
-                    android:focusable="false"
-                    android:background="@color/colorPrimary"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="12dp"
-                    android:layout_weight="1"
+                    android:id="@+id/et_quantidade_editor_inventario"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:focusable="false"
+                    android:hint="Quantidade"
+                    android:lines="1"
+                    android:textSize="22sp" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="90dp"
+                android:background="@color/colorPrimaryDark" />
         </LinearLayout>
     </ScrollView>
-    <android.support.v7.widget.CardView
-        app:cardBackgroundColor="@color/colorPrimaryDark"
-        android:layout_gravity="bottom"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="70dp"
+        android:layout_gravity="bottom">
+
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:text="Excluir"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:textColor="@color/colorPrimary"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab_delete_edior_invenario"
+                android:src="@drawable/ic_action_delete_x_branco"
+                app:fabSize="normal"
+                android:layout_marginRight="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="center"
+                app:backgroundTint="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <android.support.v7.widget.CardView
+                android:layout_gravity="center"
+                android:id="@+id/bt_salvar_editor_inventario"
+                app:cardCornerRadius="30dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="match_parent" />
-            <View
-                android:layout_gravity="center"
-                android:background="@color/colorPrimary"
-                android:layout_width="3dp"
-                android:layout_height="match_parent"/>
-            <TextView
-                android:text="Salvar"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="38sp"
-                android:textColor="@color/colorPrimary"
-                android:layout_weight="1.5"
-                android:layout_width="0dp"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent">
+                <TextView
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="24sp"
+                    android:text="Salvar"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </android.support.v7.widget.CardView>
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </FrameLayout>
 </FrameLayout>

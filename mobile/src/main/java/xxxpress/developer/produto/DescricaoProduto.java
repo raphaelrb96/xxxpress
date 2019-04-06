@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class DescricaoProduto {
 
-    public String Observacao;
+    public String observacao;
     public String fraseDestaque;
     public ArrayList<String> especificações;
 
@@ -13,13 +13,13 @@ public class DescricaoProduto {
     }
 
     public DescricaoProduto(String observacao, String fraseDestaque, ArrayList<String> especificações) {
-        Observacao = observacao;
+        this.observacao = observacao;
         this.fraseDestaque = fraseDestaque;
         this.especificações = especificações;
     }
 
     public String getObservacao() {
-        return Observacao;
+        return observacao;
     }
 
     public String getFraseDestaque() {
