@@ -301,7 +301,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="6dp"
@@ -319,7 +319,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@color/colorPrimary"
                             android:hint="@string/insira_uma_cor" />
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <View
                         android:id="@+id/bt_add_cor_editor_inventario"
@@ -368,7 +368,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="6dp"
@@ -386,7 +386,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@color/colorPrimary"
                             android:hint="@string/insira_um_tamanho" />
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <View
                         android:id="@+id/bt_add_tamanho_editor_inventario"
@@ -469,7 +469,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="6dp"
@@ -487,7 +487,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@color/colorPrimary"
                             android:hint="Insira aqui" />
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <View
                         android:id="@+id/bt_add_variante_extra1_editor_inventario"
@@ -570,7 +570,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="6dp"
@@ -588,7 +588,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@color/colorPrimary"
                             android:hint="Insira aqui" />
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <View
                         android:id="@+id/bt_extra2_add_variante_editor_inventario"
@@ -660,7 +660,7 @@
                     android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="6dp"
@@ -679,7 +679,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@color/colorPrimary"
                             android:hint="Especificações" />
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <View
                         android:id="@+id/bt_descricao_frase_destaqueet_descricao_add_especificacoes"
@@ -724,7 +724,7 @@
                     android:orientation="horizontal"
                     android:visibility="visible">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_margin="6dp"
@@ -742,7 +742,7 @@
                             android:layout_marginBottom="4dp"
                             android:background="@color/colorPrimary"
                             android:hint="Escrever" />
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
                     <View
                         android:id="@+id/bt_add_tags_edior_inventario"
@@ -852,47 +852,21 @@
         </LinearLayout>
     </ScrollView>
 
-    <FrameLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:layout_gravity="bottom">
 
-        <LinearLayout
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bt_bar"
+            android:layout_gravity="bottom"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fab_delete_edior_invenario"
-                android:src="@drawable/ic_action_delete_x_branco"
-                app:fabSize="normal"
-                android:layout_marginRight="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_gravity="center"
-                app:backgroundTint="@color/colorPrimaryDark"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <android.support.v7.widget.CardView
-                android:layout_gravity="center"
-                android:id="@+id/bt_salvar_editor_inventario"
-                app:cardCornerRadius="30dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-                <TextView
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="24sp"
-                    android:text="Salvar"
-                    android:textColor="@color/colorPrimary"
-                    android:layout_gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </android.support.v7.widget.CardView>
-        </LinearLayout>
-    </FrameLayout>
+            android:layout_height="75dp"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            app:layout_anchor="@id/bt_bar"
+            android:id="@+id/fab_inventario_edt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fabSize="normal"/>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </FrameLayout>

@@ -7,10 +7,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".adm.activites.CentralAdmActivity">
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_cenrtal_adm"
             android:elevation="16dp"
             android:layout_width="match_parent"
@@ -34,8 +34,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </FrameLayout>
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <ScrollView
@@ -45,7 +45,7 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <android.support.v7.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/bt_adm_central_inventario"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
@@ -69,8 +69,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </FrameLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:layout_marginRight="16dp"
@@ -93,8 +93,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </FrameLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:layout_marginRight="16dp"
@@ -117,8 +117,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </FrameLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
                 android:layout_marginRight="16dp"
@@ -141,8 +141,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </FrameLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:layout_marginRight="16dp"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
@@ -165,8 +165,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </FrameLayout>
-            </android.support.v7.widget.CardView>
-            <android.support.v7.widget.CardView
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
                 android:id="@+id/bt_adm_central_sair"
                 app:cardElevation="2dp"
                 app:cardBackgroundColor="@color/colorPrimaryDark"
@@ -190,7 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </FrameLayout>
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
 
 
