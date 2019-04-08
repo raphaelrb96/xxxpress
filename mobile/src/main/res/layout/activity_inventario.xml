@@ -23,6 +23,7 @@
     <include layout="@layout/content_inventario" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        app:backgroundTint="@color/colorAccent"
         android:layout_margin="16dp"
         android:layout_gravity="bottom|end"
         app:fabSize="normal"

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="categorias">
+        <item>Roupas Femininas</item>
+        <item>Roupas Masculinas</item>
+        <item>Roupas para Crianças</item>
+        <item>Sapatos Femininos</item>
+        <item>Sapatos Masculinos</item>
+        <item>Sapatos para Crianças</item>
+        <item>Acessorios Femininos</item>
+        <item>Acessorios Masculinos</item>
+        <item>Brinquedos</item>
+        <item>Esportes</item>
+        <item>Acessorios para Celular</item>
+        <item>Acessorios para Computador</item>
+        <item>Eletronicos</item>
+        <item>Ferramentas</item>
+        <item>Variedades</item>
+    </array>
+</resources>

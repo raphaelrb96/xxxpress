@@ -26,7 +26,7 @@ public class CentralAdmActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         btInventario = (CardView) findViewById(R.id.bt_adm_central_inventario);
         btSair = (CardView) findViewById(R.id.bt_adm_central_sair);
-        Toast.makeText(this, auth.getUid(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, auth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
         btInventario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

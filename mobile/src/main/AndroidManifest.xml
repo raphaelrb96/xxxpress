@@ -54,7 +54,7 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".adm.activites.EditorInventarioActivity"
-            android:label="@string/title_activity_editor_inventario"
+            android:label="Editor"
             android:theme="@style/AppTheme" />
         <activity android:name=".LoginActivity"></activity>
     </application>

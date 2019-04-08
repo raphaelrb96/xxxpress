@@ -10,8 +10,8 @@ public class Produto {
     public double precoAntigo;
     public double precoNovo;
     public ArrayList<String> tagsPesquisa;
-    public ArrayList<ParametrosExtrasProdutos> variantes1;
-    public ArrayList<ParametrosExtrasProdutos> variantes2;
+    public ParametrosExtrasProdutos variantes1;
+    public ParametrosExtrasProdutos variantes2;
     public ArrayList<String> cores;
     public ArrayList<String> tamanhos;
     public DescricaoProduto descricao;
@@ -27,7 +27,7 @@ public class Produto {
 
     }
 
-    public Produto(String idProduto, String nomeProduto, double valorFrete, double precoAntigo, double precoNovo, ArrayList<String> tagsPesquisa, ArrayList<ParametrosExtrasProdutos> variantes1, ArrayList<ParametrosExtrasProdutos> variantes2, ArrayList<String> cores, ArrayList<String> tamanhos, DescricaoProduto descricao, int categoria, int tempoDeEntregaEmDias, int quantidadeEstoque, ArrayList<String> fotosDoProduto, String idReferenciaForumComentarios, String pathVideoPrincipal, boolean promoFree) {
+    public Produto(String idProduto, String nomeProduto, double valorFrete, double precoAntigo, double precoNovo, ArrayList<String> tagsPesquisa, ParametrosExtrasProdutos variantes1, ParametrosExtrasProdutos variantes2, ArrayList<String> cores, ArrayList<String> tamanhos, DescricaoProduto descricao, int categoria, int tempoDeEntregaEmDias, int quantidadeEstoque, ArrayList<String> fotosDoProduto, String idReferenciaForumComentarios, String pathVideoPrincipal, boolean promoFree) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.valorFrete = valorFrete;
@@ -76,11 +76,11 @@ public class Produto {
         return tagsPesquisa;
     }
 
-    public ArrayList<ParametrosExtrasProdutos> getVariantes1() {
+    public ParametrosExtrasProdutos getVariantes1() {
         return variantes1;
     }
 
-    public ArrayList<ParametrosExtrasProdutos> getVariantes2() {
+    public ParametrosExtrasProdutos getVariantes2() {
         return variantes2;
     }
 
