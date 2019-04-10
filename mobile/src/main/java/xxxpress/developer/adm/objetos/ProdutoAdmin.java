@@ -1,4 +1,4 @@
-package xxxpress.developer.adm;
+package xxxpress.developer.adm.objetos;
 
 import xxxpress.developer.produto.Produto;
 

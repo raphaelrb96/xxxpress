@@ -8,4 +8,9 @@
     tools:context=".adm.fragments.InventarioFragment"
     tools:showIn="@layout/activity_inventario">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_inventario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

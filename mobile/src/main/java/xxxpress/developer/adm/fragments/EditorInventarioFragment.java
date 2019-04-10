@@ -3,16 +3,18 @@ package xxxpress.developer.adm.fragments;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Debug;
 import android.provider.MediaStore;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.WriteBatch;
 import com.google.firebase.storage.FirebaseStorage;
@@ -21,7 +23,6 @@ import com.google.firebase.storage.UploadTask;
 
 import androidx.fragment.app.Fragment;
 import android.os.Bundle;
-import androidx.cardview.widget.CardView;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -41,11 +42,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import xxxpress.developer.R;
-import xxxpress.developer.adm.ProdutoAdmin;
+import xxxpress.developer.adm.objetos.ProdutoAdmin;
 import xxxpress.developer.adm.activites.EditorInventarioActivity;
+import xxxpress.developer.adm.objetos.ProdutoAdminParcelable;
 import xxxpress.developer.constantes.ConstantesBancoDeDadosFirebase;
 import xxxpress.developer.produto.DescricaoProduto;
 import xxxpress.developer.produto.ParametrosExtrasProdutos;
@@ -93,17 +96,20 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
     private ArrayList<Uri> mUriFotoList;
     private int numeroDeFotos = 0;
     private String mNome, mTituloExtra1, mTituloExtra2, mObservacao, mFraseDestaque;
-    private ArrayList<String> mTags, mParametrosExtra1, mParametroExtra2, mCores, mTamanhos, mEspecificacoesDescricaoList, pathFotos;
+    private Map<String, Boolean> mTags, mCategoria;
+    private ArrayList<String> mParametrosExtra1, mParametroExtra2, mCores, mTamanhos, mEspecificacoesDescricaoList, pathFotos;
     private double mFrete, mPrecoOriginal, mPrecoAntigo, mPrecoNovo;
     private boolean mExtra1Existe, mExtra2Existe, mVarianteCorExiste, mVarianteTamanhoExiste;
-    private int mCategoria, mTempoEntrega, mQuantidade;
+    private int mTempoEntrega, mQuantidade;
 
+    private boolean spinnerStart = false;
 
     private FirebaseAuth mAuth;
     private FirebaseFirestore mFirestore;
     private FirebaseStorage mStorage;
     private StorageReference mStorageReference;
 
+    private ProdutoAdminParcelable produtoMain = null;
 
     public EditorInventarioFragment() {
 
@@ -169,16 +175,28 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
         cb_extra1_editor_inventario = (CheckBox) view.findViewById(R.id.cb_extra1_editor_inventario);
         cb_extra2_editor_inventario = (CheckBox) view.findViewById(R.id.cb_extra2_editor_inventario);
 
+        spinnerStart = false;
+
         instanciarFirebase();
         anexarListeners();
         iniciarArrays();
 
-        mCategoria = -1;
+
+//        produtoMain = getActivity().getIntent().getParcelableExtra("prod");
+//
+//        if (produtoMain != null) {
+//            abrirProduto(produtoMain);
+//        }
 
         spinner_categorias_editor_inventario.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mCategoria = position;
+                if (!spinnerStart) {
+                    spinnerStart = true;
+                    return;
+                }
+                mCategoria.put(String.valueOf(position), true);
+                Log.d("teste_", String.valueOf(position));
             }
 
             @Override
@@ -230,6 +248,46 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
         return view;
     }
 
+    private void abrirProduto(ProdutoAdminParcelable produtoMain) {
+        Produto p = produtoMain.getProduto();
+        switch (p.getFotosDoProduto().size()) {
+            case 1:
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(0)).into(img1_produto_inventario_editor);
+                break;
+            case 2:
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(0)).into(img1_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(1)).into(img2_produto_inventario_editor);
+                break;
+            case 3:
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(0)).into(img1_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(1)).into(img2_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(2)).into(img3_produto_inventario_editor);
+                break;
+            case 4:
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(0)).into(img1_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(1)).into(img2_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(2)).into(img3_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(3)).into(img4_produto_inventario_editor);
+                break;
+            case 5:
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(0)).into(img1_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(1)).into(img2_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(2)).into(img3_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(3)).into(img4_produto_inventario_editor);
+                Glide.with(getActivity()).load(p.getFotosDoProduto().get(4)).into(img5_produto_inventario_editor);
+                break;
+            default:
+
+                break;
+        }
+        nome_editor_inventario.setText(p.getNomeProduto());
+        frete_editor_inventario.setText(String.valueOf(p.getValorFrete()));
+        preco_original_editor_inventario.setText(String.valueOf(produtoMain.getValorDeCompra()));
+        preco_antigo_editor_inevntario.setText(String.valueOf(p.getPrecoAntigo()));
+        preco_novo_editor_inventario.setText(String.valueOf(p.getPrecoNovo()));
+
+    }
+
     private void instanciarFirebase() {
         mAuth = FirebaseAuth.getInstance();
         mStorage = FirebaseStorage.getInstance();
@@ -239,7 +297,8 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
 
     private void iniciarArrays() {
         mUriFotoList = new ArrayList<>();
-        mTags = new ArrayList<>();
+        mTags = new HashMap<>();
+        mCategoria = new HashMap<>();
         mEspecificacoesDescricaoList = new ArrayList<>();
         mParametroExtra2 = new ArrayList<>();
         mParametrosExtra1 = new ArrayList<>();
@@ -317,7 +376,7 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
                 coletarTexto(et_extra2_add_variante_editor_inventario, mParametroExtra2);
                 break;
             case R.id.bt_add_tags_edior_inventario:
-                coletarTexto(et_add_tags_edior_inventario, mTags);
+                coletarMap(mTags, et_add_tags_edior_inventario);
                 break;
             case R.id.bt_descricao_frase_destaqueet_descricao_add_especificacoes:
                 coletarTexto(et_descricao_add_especificacos, mEspecificacoesDescricaoList);
@@ -342,37 +401,41 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
             pb.setVisibility(View.VISIBLE);
             DocumentReference docRef = mFirestore.collection(ConstantesBancoDeDadosFirebase.PRODUTOS).document();
             String prodId = docRef.getId();
-            armazenarFotos(mUriFotoList, prodId);
-            ParametrosExtrasProdutos p1 = new ParametrosExtrasProdutos(mExtra1Existe, mTituloExtra1, mParametrosExtra1);
-            ParametrosExtrasProdutos p2 = new ParametrosExtrasProdutos(mExtra2Existe, mTituloExtra2, mParametroExtra2);
-            DescricaoProduto d = new DescricaoProduto(mObservacao, mFraseDestaque, mEspecificacoesDescricaoList);
-            Produto produto = new Produto(prodId, mNome, mFrete, mPrecoAntigo, mPrecoNovo, mTags, p1, p2, mCores, mTamanhos, d, mCategoria, mTempoEntrega, mQuantidade, pathFotos, prodId, null, false);
-            masterProdutoAdmin = new ProdutoAdmin(produto, mPrecoOriginal);
-            DocumentReference prodAdminRef = mFirestore.collection(ConstantesBancoDeDadosFirebase.PRODUTOS_ADMIN).document(prodId);
-            WriteBatch batch = mFirestore.batch();
-            batch.set(docRef, produto);
-            batch.set(prodAdminRef, masterProdutoAdmin);
-            batch.commit().addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(Exception e) {
-                    salvar();
-                }
-            }).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    startActivity(new Intent(getActivity(), EditorInventarioActivity.class));
-                    getActivity().finish();
-                }
-            });
+            armazenarFotos(mUriFotoList, prodId, docRef);
         }
 
+    }
+
+    private void salvarEmFiresttore(final DocumentReference docRef, final String prodId) {
+        ParametrosExtrasProdutos p1 = new ParametrosExtrasProdutos(mExtra1Existe, mTituloExtra1, mParametrosExtra1);
+        ParametrosExtrasProdutos p2 = new ParametrosExtrasProdutos(mExtra2Existe, mTituloExtra2, mParametroExtra2);
+        DescricaoProduto d = new DescricaoProduto(mObservacao, mFraseDestaque, mEspecificacoesDescricaoList);
+        Log.d("fotos_teste: arrayfinal", pathFotos.toString());
+        Produto produto = new Produto(prodId, mNome, mFrete, mPrecoAntigo, mPrecoNovo, mTags, p1, p2, mCores, mTamanhos, d, mCategoria, mTempoEntrega, mQuantidade, pathFotos, prodId, null, false);
+        masterProdutoAdmin = new ProdutoAdmin(produto, mPrecoOriginal);
+        DocumentReference prodAdminRef = mFirestore.collection(ConstantesBancoDeDadosFirebase.PRODUTOS_ADMIN).document(prodId);
+        WriteBatch batch = mFirestore.batch();
+        batch.set(docRef, produto);
+        batch.set(prodAdminRef, masterProdutoAdmin);
+        batch.commit().addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(Exception e) {
+                salvarEmFiresttore(docRef, prodId);
+            }
+        }).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                startActivity(new Intent(getActivity(), EditorInventarioActivity.class));
+                getActivity().finish();
+            }
+        });
     }
 
     private void excluir() {
         toast("Excluir Produto");
     }
 
-    private ArrayList<String> armazenarFotos(final ArrayList<Uri> uriList, final String id) {
+    private void armazenarFotos(final ArrayList<Uri> uriList, final String id, final DocumentReference docRef) {
         Uri uri = null;
         if (uriList.size() > 0) {
             uri = uriList.get(0);
@@ -386,23 +449,29 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
                     }
                     return ref.getDownloadUrl();
                 }
-            }).addOnSuccessListener(new OnSuccessListener<Uri>() {
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
                 @Override
-                public void onSuccess(Uri u) {
-                    uriList.remove(0);
-                    pathFotos.add(u.toString());
-                    armazenarFotos(uriList, id);
-
+                public void onComplete(Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        uriList.remove(0);
+                        pathFotos.add(task.getResult().toString());
+//                        Log.d("fotos_teste: array", pathFotos.toString());
+//                        Log.d("fotos_teste: conteudo", task.getResult().toString());
+//                        Log.d("fotos_teste: ref url", ref.getDownloadUrl().toString());
+                        if (uriList.size() > 0) {
+                            armazenarFotos(mUriFotoList, id, docRef);
+                        } else {
+                            salvarEmFiresttore(docRef, id);
+                        }
+                    }
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(Exception e) {
-                    armazenarFotos(uriList, id);
+                    armazenarFotos(mUriFotoList, id, docRef);
                 }
             });
         }
-
-        return pathFotos;
 
     }
 
@@ -468,9 +537,8 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
 
                                                                 if (mTags.size() >= 10) {
 
-                                                                    if (mCategoria != -1) {
+                                                                    if (!mCategoria.isEmpty()) {
 
-                                                                        mCategoria = spinner_categorias_editor_inventario.getSelectedItemPosition();
 
                                                                         if (et_tempo_entrega_editor_inventario.getText().length() > 0 && !et_tempo_entrega_editor_inventario.getText().toString().equals("")) {
 
@@ -583,6 +651,14 @@ public class EditorInventarioFragment extends Fragment implements View.OnTouchLi
             return false;
         }
 
+    }
+
+    private void coletarMap(Map<String, Boolean> map, EditText et) {
+        String texto = et.getText().toString();
+        if (texto.length() > 0) {
+            map.put(texto, true);
+            et.setText("");
+        }
     }
 
     private void coletarTexto(EditText et, ArrayList<String> list) {

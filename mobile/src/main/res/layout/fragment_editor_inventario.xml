@@ -889,6 +889,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <ProgressBar
+                android:layout_marginLeft="50dp"
                 app:layout_anchorGravity="end"
                 android:visibility="gone"
                 app:layout_anchor="@id/bt_app_bar"

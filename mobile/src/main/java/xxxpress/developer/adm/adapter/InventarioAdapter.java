@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 import xxxpress.developer.R;
-import xxxpress.developer.adm.ProdutoAdmin;
+import xxxpress.developer.adm.objetos.ProdutoAdmin;
 
 public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.ItemInventario> {
 
@@ -43,7 +43,9 @@ public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.It
         ProdutoAdmin prod = produtos.get(position);
         holder.tvNomeProduto.setText(prod.getProduto().getNomeProduto());
         holder.tvPreco.setText(Double.toString(prod.produto.getPrecoNovo()));
-        Glide.with(context).load(prod.getProduto().getFotosDoProduto().get(0));
+        if (prod.getProduto().getFotosDoProduto().size() > 0) {
+            Glide.with(context).load(prod.getProduto().getFotosDoProduto().get(0)).into(holder.imgProduto);
+        }
     }
 
     @Override
@@ -69,7 +71,8 @@ public class InventarioAdapter extends RecyclerView.Adapter<InventarioAdapter.It
 
         @Override
         public void onClick(View v) {
-
+            ProdutoAdmin produtoAdmin = produtos.get(getAdapterPosition());
+            inventarioClickListener.inventarioItemClick(produtoAdmin);
         }
     }
 

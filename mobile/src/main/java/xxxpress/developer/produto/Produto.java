@@ -1,6 +1,7 @@
 package xxxpress.developer.produto;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Produto {
 
@@ -9,13 +10,13 @@ public class Produto {
     public double valorFrete;
     public double precoAntigo;
     public double precoNovo;
-    public ArrayList<String> tagsPesquisa;
+    public Map<String, Boolean> tagsPesquisa;
     public ParametrosExtrasProdutos variantes1;
     public ParametrosExtrasProdutos variantes2;
     public ArrayList<String> cores;
     public ArrayList<String> tamanhos;
     public DescricaoProduto descricao;
-    public int categoria;
+    public Map<String, Boolean> categorias;
     public int tempoDeEntregaEmDias;
     public int quantidadeEstoque;
     public ArrayList<String> fotosDoProduto;
@@ -27,7 +28,7 @@ public class Produto {
 
     }
 
-    public Produto(String idProduto, String nomeProduto, double valorFrete, double precoAntigo, double precoNovo, ArrayList<String> tagsPesquisa, ParametrosExtrasProdutos variantes1, ParametrosExtrasProdutos variantes2, ArrayList<String> cores, ArrayList<String> tamanhos, DescricaoProduto descricao, int categoria, int tempoDeEntregaEmDias, int quantidadeEstoque, ArrayList<String> fotosDoProduto, String idReferenciaForumComentarios, String pathVideoPrincipal, boolean promoFree) {
+    public Produto(String idProduto, String nomeProduto, double valorFrete, double precoAntigo, double precoNovo, Map<String, Boolean> tagsPesquisa, ParametrosExtrasProdutos variantes1, ParametrosExtrasProdutos variantes2, ArrayList<String> cores, ArrayList<String> tamanhos, DescricaoProduto descricao, Map<String, Boolean> categoria, int tempoDeEntregaEmDias, int quantidadeEstoque, ArrayList<String> fotosDoProduto, String idReferenciaForumComentarios, String pathVideoPrincipal, boolean promoFree) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.valorFrete = valorFrete;
@@ -39,7 +40,7 @@ public class Produto {
         this.cores = cores;
         this.tamanhos = tamanhos;
         this.descricao = descricao;
-        this.categoria = categoria;
+        this.categorias = categoria;
         this.tempoDeEntregaEmDias = tempoDeEntregaEmDias;
         this.quantidadeEstoque = quantidadeEstoque;
         this.fotosDoProduto = fotosDoProduto;
@@ -72,7 +73,7 @@ public class Produto {
         return precoNovo;
     }
 
-    public ArrayList<String> getTagsPesquisa() {
+    public Map<String, Boolean> getTagsPesquisa() {
         return tagsPesquisa;
     }
 
@@ -96,8 +97,8 @@ public class Produto {
         return descricao;
     }
 
-    public int getCategoria() {
-        return categoria;
+    public Map<String, Boolean> getCategoria() {
+        return categorias;
     }
 
     public int getTempoDeEntregaEmDias() {
