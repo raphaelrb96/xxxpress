@@ -5,23 +5,79 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
         app:cardCornerRadius="4dp"
+        app:cardBackgroundColor="@color/colorPrimaryDark"
         app:cardElevation="4dp"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <LinearLayout
-            android:orientation="vertical"
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="4dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/img_produto_feed_principal"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:minHeight="200dp"
+                        android:id="@+id/img_item_produto_principal"
+                        android:scaleType="centerCrop"
+                        android:adjustViewBounds="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <FrameLayout
+                        android:background="@drawable/etiqueta_preco_backgroud"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="end"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp">
+                        <TextView
+                            android:id="@+id/preco_item_produto_principal"
+                            android:textStyle="bold"
+                            android:textAllCaps="true"
+                            android:gravity="center"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="6dp"
+                            android:textSize="22sp"
+                            android:text="$5.00"
+                            android:layout_gravity="center"
+                            android:textColor="@color/colorPrimary"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </FrameLayout>
+                </FrameLayout>
+
+                <androidx.cardview.widget.CardView
+                    app:cardElevation="6dp"
+                    app:cardBackgroundColor="@color/corCinza"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:id="@+id/tv_botao_inferior_item_produto_principal"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textSize="26sp"
+                        android:text="Comprar"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </androidx.cardview.widget.CardView>
+
 </FrameLayout>
